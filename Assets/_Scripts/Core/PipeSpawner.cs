@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace _Scripts.Core
 {
@@ -10,6 +10,8 @@ namespace _Scripts.Core
         private readonly float _spawnDelay = 2.3f;
         private List<Pipe> _pipes;
 
+        [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _startButton;
         [SerializeField] private Pipe _pipePrefab;
         [SerializeField] private Transform _spawnPoint;
 
@@ -21,17 +23,30 @@ namespace _Scripts.Core
 
         private void Awake()
         {
+            _startButton.onClick.AddListener(OnStart);
+            _restartButton.onClick.AddListener(OnRestart);
+            
             _pipes = new List<Pipe>();
             _spawnPosition = _spawnPoint.position;
         }
 
-        public void StartSpawn()
+        private void OnStart()
+        {
+            StartSpawn();
+        }
+
+        private void OnRestart()
         {
             Clear();
+            StopSpawn();
+        }
+
+        private void StartSpawn()
+        {
             _spawnCoroutine = StartCoroutine(SpawnPipes());
         }
 
-        public void StopSpawn()
+        private void StopSpawn()
         {
             if (_spawnCoroutine != null)
             {

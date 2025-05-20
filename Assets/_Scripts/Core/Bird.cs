@@ -1,10 +1,15 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.Core
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Bird : MonoBehaviour
     {
+        [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _startButton;
+        
         private static readonly int Fly = Animator.StringToHash("Fly");
         
         private readonly float _maxUpAngle = 30f;
@@ -17,17 +22,54 @@ namespace _Scripts.Core
         private float _rotationSpeedFactor = 1.5f;
         private float _targetAngle;
 
+        public event Action Died;
+
         private Rigidbody2D _body2D;
         private Animator _animator;
-        
+        private Vector3 _startPosition;
+        private bool _ready;
+
         private void Awake()
         {
+            _startButton.onClick.AddListener(OnStart);
+            _restartButton.onClick.AddListener(OnRestart);
             _body2D = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
         }
 
+        private void Start()
+        {
+            _startPosition = transform.position;
+            Reset();
+        }
+
+        private void OnStart()
+        {
+            _ready = true;
+            _body2D.isKinematic = false;
+        }
+
+        private void OnRestart()
+        {
+            Reset();
+        }
+
+        private void Reset()
+        {
+            _ready = false;   
+            _body2D.isKinematic = true;
+            
+            _body2D.velocity = Vector2.zero;
+            _body2D.angularVelocity = 0;
+            transform.position = _startPosition;
+            transform.rotation = Quaternion.identity;
+        }
+
         private void Update()
         {
+            if (!_ready)
+                return;
+            
             if (Input.GetMouseButtonDown(0))
             {
                 Jump();
@@ -66,12 +108,12 @@ namespace _Scripts.Core
             _body2D.velocity = Vector2.zero;
             _body2D.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
         }
-        
+
         public void Die()
         {
-            
+            Died?.Invoke();
         }
-        
+
         private void SetMaxTargetAngle()
         {
             _targetAngle = _maxUpAngle;
