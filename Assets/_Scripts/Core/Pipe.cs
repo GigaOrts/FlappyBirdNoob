@@ -4,7 +4,7 @@ namespace _Scripts.Core
 {
     public class Pipe : Hazard
     {
-        private readonly float _speed = 2;
+        private readonly float _speed = 2.5f;
         private Rigidbody2D _body2D;
 
         private void Awake()

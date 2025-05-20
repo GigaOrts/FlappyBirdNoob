@@ -11,6 +11,7 @@ namespace _Scripts.Core
         [SerializeField] private Button _startButton;
         
         private static readonly int Fly = Animator.StringToHash("Fly");
+        private static readonly int GetReadyIdle = Animator.StringToHash("GetReadyIdle");
         
         private readonly float _maxUpAngle = 30f;
         private readonly float _maxDownAngle = -60f;
@@ -18,7 +19,7 @@ namespace _Scripts.Core
         private readonly float _minRotationSpeedFactor = 0.5f;
         private readonly float _maxRotationSpeedFactor = 5f;
 
-        private readonly float _jumpForce = 9;
+        private readonly float _jumpForce = 12;
         private float _rotationSpeedFactor = 1.5f;
         private float _targetAngle;
 
@@ -40,6 +41,8 @@ namespace _Scripts.Core
         private void Start()
         {
             _startPosition = transform.position;
+            
+            _animator.SetBool(GetReadyIdle, true);
             Reset();
         }
 
@@ -47,11 +50,16 @@ namespace _Scripts.Core
         {
             _ready = true;
             _body2D.isKinematic = false;
+            _animator.SetBool(GetReadyIdle, false);
+            
+            Jump();
+            AnimateJump();
         }
 
         private void OnRestart()
         {
             Reset();
+            _animator.SetBool(GetReadyIdle, true);
         }
 
         private void Reset()

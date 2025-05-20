@@ -13,7 +13,8 @@ namespace _Scripts.Core
         [SerializeField] private GameObject _score;
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _startButton;
-
+        [SerializeField] private ScoreDisplay _scoreDisplay;
+        
         private void Awake()
         {
             _startButton.onClick.AddListener(OnStart);
@@ -30,6 +31,7 @@ namespace _Scripts.Core
         {
             ShowGetReadyMenu();
             HideScore();
+            HideGameOverMenu();
             UnpauseGame();
         }
 
@@ -68,7 +70,6 @@ namespace _Scripts.Core
         private void OnDied()
         {
             PauseGame();
-            HideScore();
             ShowGameOverMenu();
         }
 
@@ -82,14 +83,10 @@ namespace _Scripts.Core
             Time.timeScale = 1;
         }
         
-        private void RestartGame()
-        {
-            
-        }
-        
         private void ShowGameOverMenu()
         {
             _gameOverMenu.SetActive(true);
+            _scoreDisplay.ShowHighScore();
         }
 
         private void HideGameOverMenu()

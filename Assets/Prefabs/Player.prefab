@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6026442289898098007}
   - component: {fileID: 2023166199578777390}
   - component: {fileID: 6210120961664434673}
+  - component: {fileID: 4138377692473936829}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -70,7 +71,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45522285
+  m_Radius: 0.40684485
 --- !u!50 &3087073115761187304
 Rigidbody2D:
   serializedVersion: 4
@@ -110,11 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb0e970b1774ac4cab31fa47800433e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 10
-  _maxUpAngle: 30
-  _maxDownAngle: -80
-  _minRotationSpeedFactor: 0.5
-  _maxRotationSpeedFactor: 3
+  _restartButton: {fileID: 0}
+  _startButton: {fileID: 0}
 --- !u!95 &2023166199578777390
 Animator:
   serializedVersion: 5
@@ -188,3 +186,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4138377692473936829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518840949931866550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675bfa4050de3cb4b8f7b78cfbac4f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: {fileID: 0}
