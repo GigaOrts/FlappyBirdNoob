@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +10,10 @@ namespace _Scripts.Core
 
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _getReadyMenu;
+        [SerializeField] private GameObject _score;
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _startButton;
-//todo declare StartGame event, not only RESTARTGAME
+
         private void Awake()
         {
             _startButton.onClick.AddListener(OnStart);
@@ -29,12 +29,24 @@ namespace _Scripts.Core
         private void SetGetReadyState()
         {
             ShowGetReadyMenu();
+            HideScore();
             UnpauseGame();
         }
 
         private void OnStart()
         {
             HideGetReadyMenu();
+            ShowScore();
+        }
+
+        private void ShowScore()
+        {
+            _score.SetActive(true);
+        }
+        
+        private void HideScore()
+        {
+            _score.SetActive(false);
         }
 
         private void OnRestart()
@@ -56,15 +68,16 @@ namespace _Scripts.Core
         private void OnDied()
         {
             PauseGame();
+            HideScore();
             ShowGameOverMenu();
         }
 
-        private void PauseGame()
+        public void PauseGame()
         {
             Time.timeScale = 0;
         }
 
-        private void UnpauseGame()
+        public void UnpauseGame()
         {
             Time.timeScale = 1;
         }
