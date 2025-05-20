@@ -1,7 +1,20 @@
+using UnityEngine;
+
 namespace _Scripts.Core
 {
-    public class Pipe
+    public class Pipe : Hazard
     {
-        public float Speed { get; } = 2;
+        private readonly float _speed = 2;
+        private Rigidbody2D _body2D;
+
+        private void Awake()
+        {
+            _body2D = GetComponent<Rigidbody2D>();
+        }
+
+        private void FixedUpdate()
+        {
+            _body2D.velocity = Vector2.left * _speed;   
+        }
     }
 }

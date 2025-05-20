@@ -1135,9 +1135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b09774d123bc0458b814463ad24e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pipePrefab: {fileID: 6163249029560017347, guid: 7e4ecaa90a2211146b5d6d87ec9466c9, type: 3}
+  _pipePrefab: {fileID: 0}
   _spawnPoint: {fileID: 381662023}
-  _spawnDelay: 2.3
 --- !u!4 &1400252522
 Transform:
   m_ObjectHideFlags: 0

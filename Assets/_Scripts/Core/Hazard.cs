@@ -6,7 +6,7 @@ namespace _Scripts.Core
     {
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.collider.TryGetComponent(out BirdView bird))
+            if (other.collider.TryGetComponent(out Bird bird))
             {
                 bird.Die();
             }

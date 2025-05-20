@@ -4,7 +4,7 @@ namespace _Scripts.Core
 {
     public class Main : MonoBehaviour
     {
-        [SerializeField] private PipeSpawnerView _pipeSpawner;
+        [SerializeField] private PipeSpawner _pipeSpawner;
 
         private void Start()
         {
