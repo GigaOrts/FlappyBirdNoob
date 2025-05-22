@@ -1,0 +1,39 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace _Scripts.Core
+{
+    public class BirdInitialization : MonoBehaviour
+    {
+        [SerializeField] private BirdPresentation _presentation;
+        [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _startButton;
+
+        private BirdController _controller;
+        private BirdInput _input;
+        private BirdLifecycle _lifecycle;
+
+        private void Awake()
+        {
+            var body = _presentation.GetComponent<Rigidbody2D>();
+            var animator = _presentation.GetComponent<Animator>();
+
+            var physics = new BirdPhysics(body, _presentation.transform);
+            var birdAnimator = new BirdAnimator(animator);
+
+            _controller = new BirdController(physics, birdAnimator);
+            _lifecycle = new BirdLifecycle(_controller, _presentation.transform.position);
+            _input = new BirdInput();
+            
+            _presentation.Initialize(_lifecycle, _input, _controller);
+
+            _startButton.onClick.AddListener(() =>
+            {
+                _lifecycle.StartGame();
+                _controller.Jump();
+            });
+
+            _restartButton.onClick.AddListener(_lifecycle.Restart);
+        }
+    }
+}
