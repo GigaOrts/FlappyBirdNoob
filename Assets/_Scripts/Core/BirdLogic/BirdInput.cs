@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class BirdInput
+namespace _Scripts.Core.BirdLogic
 {
-    public bool JumpPressed() => Input.GetMouseButtonDown(0);
+    public class BirdInput
+    {
+        public bool JumpPressed() => Input.GetMouseButtonDown(0);
+    }
 }

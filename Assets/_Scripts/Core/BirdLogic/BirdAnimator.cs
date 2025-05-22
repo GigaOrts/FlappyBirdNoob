@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class BirdAnimator
+namespace _Scripts.Core.BirdLogic
 {
-    private readonly Animator _animator;
-    private static readonly int Fly = Animator.StringToHash("Fly");
-    private static readonly int FlyLoop = Animator.StringToHash("FlyLoop");
-
-    public BirdAnimator(Animator animator)
+    public class BirdAnimator
     {
-        _animator = animator;
-    }
+        private readonly Animator _animator;
+        private static readonly int Fly = Animator.StringToHash("Fly");
+        private static readonly int FlyLoop = Animator.StringToHash("FlyLoop");
 
-    public void TriggerJump() => _animator.SetTrigger(Fly);
-    public void SetFlyLoop(bool enabled) => _animator.SetBool(FlyLoop, enabled);
+        public BirdAnimator(Animator animator)
+        {
+            _animator = animator;
+        }
+
+        public void TriggerJump() => _animator.SetTrigger(Fly);
+        public void SetFlyLoop(bool enabled) => _animator.SetBool(FlyLoop, enabled);
+    }
 }

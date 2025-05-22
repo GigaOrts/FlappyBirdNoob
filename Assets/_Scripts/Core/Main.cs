@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _Scripts.Core
 {
-    using UnityEngine.Serialization;
 
     public class Main : MonoBehaviour
     {
         [SerializeField] private PipeSpawner _pipeSpawner;
-        [FormerlySerializedAs("_bird")] [SerializeField] private BirdPresentation birdPresentation;
+        [SerializeField] private BirdPresentation _birdPresentation;
 
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _getReadyMenu;
@@ -21,7 +21,7 @@ namespace _Scripts.Core
         {
             _startButton.onClick.AddListener(OnStart);
             _restartButton.onClick.AddListener(OnRestart);
-            birdPresentation.Died += OnDied;
+            _birdPresentation.Died += OnDied;
         }
 
         private void Start()

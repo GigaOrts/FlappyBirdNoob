@@ -1,3 +1,4 @@
+using _Scripts.Core.BirdLogic;
 using UnityEngine;
 
 public class BirdLifecycle
