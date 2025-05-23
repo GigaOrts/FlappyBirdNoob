@@ -1,8 +1,7 @@
-using _Scripts.Core.BirdLogic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Scripts.Core
+namespace _Scripts.Core.BirdLogic
 {
     public class BirdInitialization : MonoBehaviour
     {
