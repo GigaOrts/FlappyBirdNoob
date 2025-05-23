@@ -6,13 +6,13 @@ namespace _Scripts.Core.ScoreLogic
     public class DigitsToSpriteConverter
     {
         private readonly Sprite[] _digitSprites;
-        private readonly GameObject[] _scoreDigitObjects; 
-        private readonly GameObject[] _highScoreDigitObjects; 
+        private readonly Image[] _scoreDigitObjects; 
+        private readonly Image[] _highScoreDigitObjects; 
         
         private readonly Score _score; 
         private readonly HighScore _highScore;
         
-        public DigitsToSpriteConverter(Score score, HighScore highScore, Sprite[] digitSprites, GameObject[] scoreDigitObjects, GameObject[] highScoreDigitObjects)
+        public DigitsToSpriteConverter(Score score, HighScore highScore, Sprite[] digitSprites, Image[] scoreDigitObjects, Image[] highScoreDigitObjects)
         {
             _score = score;
             _score.OnScoreChanged += ShowScore;
@@ -30,7 +30,7 @@ namespace _Scripts.Core.ScoreLogic
         private void ShowScore(int value) => 
             Convert(value, _scoreDigitObjects, _digitSprites);
         
-        private void Convert(int value, GameObject[] digitObjects, Sprite[] digitSprites)
+        private void Convert(int value, Image[] digitObjects, Sprite[] digitSprites)
         {
             int[] digits = ToDigits(value);
 
@@ -40,12 +40,15 @@ namespace _Scripts.Core.ScoreLogic
                                   (i == 1 && value > 9) ||
                                   (i == 0 && value > 99); 
 
-                digitObjects[i].SetActive(shouldShow);
+                digitObjects[i].gameObject.SetActive(shouldShow);
             
                 if (shouldShow)
                 {
-                    var image = digitObjects[i].GetComponent<Image>();
-                    image.sprite = digitSprites[digits[i]];
+                    var digit = digits[i];
+                    var digitSprite = digitSprites[digit];
+                    var image = digitObjects[i];
+                    
+                    image.sprite = digitSprite;
                     image.SetNativeSize();
                 }
             }

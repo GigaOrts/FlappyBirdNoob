@@ -586,8 +586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 1336139788}
-  _restartButton: {fileID: 911272796}
   _startButton: {fileID: 966779883}
+  _restartButton: {fileID: 911272796}
 --- !u!4 &477182144
 Transform:
   m_ObjectHideFlags: 0
@@ -631,13 +631,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd5ba4d02a093c845a769460f7d6028b, type: 3}
   - {fileID: 21300000, guid: 8e859b188a89d424f90cc53b687ff0a4, type: 3}
   _scoreDigitObjects:
-  - {fileID: 1222171114}
-  - {fileID: 1745651723}
-  - {fileID: 845464882}
+  - {fileID: 1222171116}
+  - {fileID: 1745651725}
+  - {fileID: 845464884}
   _highScoreDigitObjects:
-  - {fileID: 1720380391}
-  - {fileID: 348580771}
-  - {fileID: 79620073}
+  - {fileID: 1720380393}
+  - {fileID: 348580773}
+  - {fileID: 79620075}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,7 +3319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pipeSpawner: {fileID: 1400252521}
   _birdPresentation: {fileID: 1336139788}
-  _scorePresentation: {fileID: 0}
   _gameOverMenu: {fileID: 1698782965}
   _getReadyMenu: {fileID: 1708686824}
   _score: {fileID: 1330760112}

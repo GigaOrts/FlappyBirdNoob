@@ -14,24 +14,22 @@ namespace _Scripts.Core.ScoreLogic
         [SerializeField] private Sprite[] _digitSprites;
         
         [Tooltip("Expected order: Hundreds, Tens, Units")]
-        [SerializeField] private GameObject[] _scoreDigitObjects; 
-        [SerializeField] private GameObject[] _highScoreDigitObjects;
+        [SerializeField] private Image[] _scoreDigitObjects; 
+        [SerializeField] private Image[] _highScoreDigitObjects;
         
-        private Score _score;
         private DigitsToSpriteConverter _digitsToSpriteConverter;
-        private HighScore _highScore;
         
         private void Awake()
         {
-            _score = new Score();
-            _highScore = new HighScore(_score);
+            var score = new Score();
+            var highScore = new HighScore(score);
             
-            _startButton.onClick.AddListener(_score.Reset);
-            _restartButton.onClick.AddListener(_score.Reset);
+            _startButton.onClick.AddListener(score.Reset);
+            _restartButton.onClick.AddListener(score.Reset);
 
-            _scorePresentation.Initialize(_score);
+            _scorePresentation.Initialize(score);
             
-            _digitsToSpriteConverter = new DigitsToSpriteConverter(_score, _highScore, _digitSprites, 
+            _digitsToSpriteConverter = new DigitsToSpriteConverter(score, highScore, _digitSprites, 
                 _scoreDigitObjects, _highScoreDigitObjects);
             
             _birdPresentation.Died += _digitsToSpriteConverter.ShowHighScore;
