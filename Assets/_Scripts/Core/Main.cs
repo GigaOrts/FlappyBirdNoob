@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _Scripts.Core
@@ -13,10 +12,10 @@ namespace _Scripts.Core
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _getReadyMenu;
         [SerializeField] private GameObject _score;
-        [SerializeField] private Button _restartButton;
+
         [SerializeField] private Button _startButton;
-        [SerializeField] private ScoreDisplay _scoreDisplay;
-        
+        [SerializeField] private Button _restartButton;
+
         private void Awake()
         {
             _startButton.onClick.AddListener(OnStart);
@@ -88,7 +87,6 @@ namespace _Scripts.Core
         private void ShowGameOverMenu()
         {
             _gameOverMenu.SetActive(true);
-            _scoreDisplay.ShowHighScore();
         }
 
         private void HideGameOverMenu()

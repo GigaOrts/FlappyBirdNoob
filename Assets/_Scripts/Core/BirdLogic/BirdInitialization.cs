@@ -7,8 +7,8 @@ namespace _Scripts.Core
     public class BirdInitialization : MonoBehaviour
     {
         [SerializeField] private BirdPresentation _presentation;
-        [SerializeField] private Button _restartButton;
         [SerializeField] private Button _startButton;
+        [SerializeField] private Button _restartButton;
 
         private BirdController _controller;
         private BirdInput _input;

@@ -1,19 +1,19 @@
 using UnityEngine;
 
-namespace _Scripts.Core
+namespace _Scripts.Core.ScoreLogic
 {
-    public class HighScore : MonoBehaviour
+    public class HighScore
     {
         private const string HighScoreKey = "Highscore";
         
         private Score _score;
 
-        private void Awake()
+        public HighScore(Score score)
         {
-            _score = GetComponent<Score>();
+            _score = score;
             _score.OnScoreChanged += Set;
         }
-
+        
         public int Get()
         {
             return PlayerPrefs.GetInt(HighScoreKey, 0);

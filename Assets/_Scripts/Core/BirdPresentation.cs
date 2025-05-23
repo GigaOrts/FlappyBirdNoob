@@ -23,11 +23,21 @@ namespace _Scripts.Core
         {
             Died?.Invoke();
         }
-        
+
+        private void Start()
+        {
+            _controller.Animator.SetFlyLoop(true);
+        }
+
         private void Update()
         {
-            if (_lifecycle.IsReady && _input.JumpPressed())
+            if (!_lifecycle.IsReady)
+                return;
+
+            if (_input.JumpPressed())
+            {
                 _controller.Jump();
+            }
 
             _controller.UpdateRotation();
         }
