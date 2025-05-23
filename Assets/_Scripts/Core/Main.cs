@@ -1,3 +1,4 @@
+using _Scripts.Core.Hazards;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Scripts.Core
+namespace _Scripts.Core.Hazards
 {
     public class PipeSpawner : MonoBehaviour
     {
