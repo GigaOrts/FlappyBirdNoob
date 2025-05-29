@@ -1,6 +1,7 @@
+using _Scripts.Core.Environment;
 using UnityEngine;
 
-namespace _Scripts.Core.Environment
+namespace _Scripts.Core.Monobehaviours
 {
     public class ParallaxMoverPresentation : MonoBehaviour
     {
@@ -13,7 +14,7 @@ namespace _Scripts.Core.Environment
         
         private void Update()
         {
-            _parallaxMover.Move(Time.deltaTime);
+            _parallaxMover.Move();
         }
     }
 }

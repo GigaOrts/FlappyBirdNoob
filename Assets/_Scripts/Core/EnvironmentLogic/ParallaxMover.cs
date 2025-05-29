@@ -13,10 +13,10 @@ namespace _Scripts.Core.Environment
             _speed = speed;
         }
         
-        public void Move(float dt)
+        public void Move()
         {
             Vector2 size = _spriteRenderer.size;
-            size.x += _speed * dt;
+            size.x += _speed * Time.deltaTime;
             _spriteRenderer.size = size;
         }
     }

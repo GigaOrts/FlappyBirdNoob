@@ -1,3 +1,4 @@
+using _Scripts.Core.Monobehaviours;
 using UnityEngine;
 
 namespace _Scripts.Core.Environment
