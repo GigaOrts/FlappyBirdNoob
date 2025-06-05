@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Scripts.Core.Monobehaviours
+namespace _Scripts.Core.MonoBehaviours
 {
     public class OnTriggerEnterDestroyer : MonoBehaviour
     {

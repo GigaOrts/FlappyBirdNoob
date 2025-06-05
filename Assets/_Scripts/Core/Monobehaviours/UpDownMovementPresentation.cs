@@ -3,7 +3,7 @@ using _Scripts.Core.UpDownMovementLogic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Scripts.Core.Monobehaviours
+namespace _Scripts.Core.MonoBehaviours
 {
     public class UpDownMovementPresentation : MonoBehaviour
     {

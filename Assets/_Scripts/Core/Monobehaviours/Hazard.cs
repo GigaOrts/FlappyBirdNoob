@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Scripts.Core.Hazards
+namespace _Scripts.Core.MonoBehaviours
 {
     public class Hazard : MonoBehaviour
     {

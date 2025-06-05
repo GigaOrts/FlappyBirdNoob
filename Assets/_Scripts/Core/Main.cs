@@ -1,4 +1,5 @@
 using _Scripts.Core.Hazards;
+using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace _Scripts.Core
 
     public class Main : MonoBehaviour
     {
-        [SerializeField] private PipeSpawner _pipeSpawner;
+        [SerializeField] private PipeFactoryPresentation _pipeFactoryPresentation;
         [SerializeField] private BirdPresentation _birdPresentation;
 
         [SerializeField] private GameObject _gameOverMenu;

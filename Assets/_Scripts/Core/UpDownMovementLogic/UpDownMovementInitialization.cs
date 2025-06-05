@@ -1,4 +1,4 @@
-using _Scripts.Core.Monobehaviours;
+using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
 using UnityEngine.UI;
 

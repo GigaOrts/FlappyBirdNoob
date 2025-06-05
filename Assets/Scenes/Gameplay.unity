@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 477182145}
   - component: {fileID: 477182146}
   - component: {fileID: 477182147}
+  - component: {fileID: 477182148}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -810,6 +811,24 @@ MonoBehaviour:
   _backgroundSpeed: 1
   _groundParallaxMoverPresentation: {fileID: 2111772025}
   _backgroundParallaxMoverPresentation: {fileID: 740715717}
+--- !u!114 &477182148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477182142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f168bedfc77c4e7f96f788172a8dddb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pipeFactoryPresentation: {fileID: 1400252521}
+  _restartButton: {fileID: 911272796}
+  _startButton: {fileID: 966779883}
+  _pipePresentationPrefab: {fileID: 6163249029560017347, guid: 7e4ecaa90a2211146b5d6d87ec9466c9, type: 3}
+  _spawnPoint: {fileID: 381662023}
+  _container: {fileID: 1400252522}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2860,7 @@ GameObject:
   - component: {fileID: 1400252522}
   - component: {fileID: 1400252521}
   m_Layer: 0
-  m_Name: PipeSpawner
+  m_Name: PipeFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2859,10 +2878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b09774d123bc0458b814463ad24e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _restartButton: {fileID: 911272796}
-  _startButton: {fileID: 966779883}
-  _pipePrefab: {fileID: 6163249029560017347, guid: 7e4ecaa90a2211146b5d6d87ec9466c9, type: 3}
-  _spawnPoint: {fileID: 381662023}
 --- !u!4 &1400252522
 Transform:
   m_ObjectHideFlags: 0
@@ -4182,7 +4197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b8a416a17f1e04c9a3b7badd706d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pipeSpawner: {fileID: 1400252521}
+  _pipeFactoryPresentation: {fileID: 1400252521}
   _birdPresentation: {fileID: 1336139788}
   _gameOverMenu: {fileID: 1698782965}
   _getReadyMenu: {fileID: 1708686824}
@@ -4442,6 +4457,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6210120961664434673, guid: 6b922fb108de5154b83e73b63807656e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210120961664434673, guid: 6b922fb108de5154b83e73b63807656e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210120961664434673, guid: 6b922fb108de5154b83e73b63807656e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6518840949931866550, guid: 6b922fb108de5154b83e73b63807656e, type: 3}
       propertyPath: m_Name
       value: Bird

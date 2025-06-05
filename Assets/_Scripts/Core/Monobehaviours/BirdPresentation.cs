@@ -2,7 +2,7 @@ using System;
 using _Scripts.Core.BirdLogic;
 using UnityEngine;
 
-namespace _Scripts.Core
+namespace _Scripts.Core.MonoBehaviours
 {
     public class BirdPresentation : MonoBehaviour
     {

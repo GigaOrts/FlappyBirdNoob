@@ -1,7 +1,7 @@
 using _Scripts.Core.ScoreLogic;
 using UnityEngine;
 
-namespace _Scripts.Core
+namespace _Scripts.Core.MonoBehaviours
 {
     public class ScorePresentation : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-using _Scripts.Core.Environment;
+using _Scripts.Core.EnvironmentLogic;
 using UnityEngine;
 
-namespace _Scripts.Core.Monobehaviours
+namespace _Scripts.Core.MonoBehaviours
 {
     public class ParallaxMoverPresentation : MonoBehaviour
     {
