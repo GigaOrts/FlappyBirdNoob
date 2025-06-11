@@ -9,8 +9,8 @@ namespace _Scripts.Core.Environment
         [SerializeField] private float _groundSpeed = 5.1f;
         [SerializeField] private float _backgroundSpeed = 1f;
         
-        [SerializeField]  private ParallaxMoverPresentation _groundParallaxMoverPresentation;
-        [SerializeField]  private ParallaxMoverPresentation _backgroundParallaxMoverPresentation;
+        [SerializeField] private ParallaxMoverPresentation _groundParallaxMoverPresentation;
+        [SerializeField] private ParallaxMoverPresentation _backgroundParallaxMoverPresentation;
 
         private void Awake()  
         {  
@@ -22,7 +22,7 @@ namespace _Scripts.Core.Environment
         {  
             var spriteRenderer = presentation.GetComponent<SpriteRenderer>();  
             var parallaxMover = new ParallaxMover(spriteRenderer, speed);  
-            presentation.Initialize(parallaxMover);  
+            // presentation.Construct(parallaxMover);  
         }  
     }
 }
