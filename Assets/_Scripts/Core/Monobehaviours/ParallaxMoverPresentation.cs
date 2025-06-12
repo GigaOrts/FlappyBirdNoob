@@ -8,17 +8,17 @@ namespace _Scripts.Core.MonoBehaviours
     {
         private ParallaxMover _parallaxMover;
         
-        [Inject(Id = "Ground")] 
-        public void Construct1(ParallaxMover parallaxMover)
+        [Inject] 
+        public void Construct(ParallaxMover parallaxMover)
         {
             _parallaxMover = parallaxMover;
         }
         
-        [Inject(Id = "Background")] 
-        public void Construct2(ParallaxMover parallaxMover)
-        {
-            _parallaxMover = parallaxMover;
-        }
+        // [Inject(Id = "Background")] 
+        // public void Construct2(ParallaxMover parallaxMover)
+        // {
+        //     _parallaxMover = parallaxMover;
+        // }
         
         private void Update()
         {

@@ -13,15 +13,13 @@ public class ParallaxMoverInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<ParallaxMover>()
-            .WithId("Ground")
-            .To<ParallaxMover>()
+            
             .AsTransient()
             .WithArguments(groundSpriteRenderer, _groundSpeed);
 
-        Container.Bind<ParallaxMover>()
-            .WithId("Background")
-            .To<ParallaxMover>()
-            .AsTransient()
-            .WithArguments(backgroundSpriteRenderer, _backgroundSpeed);
+        // Container.Bind<ParallaxMover>()
+        //     .WithId("Background")
+        //     .AsTransient()
+        //     .WithArguments(backgroundSpriteRenderer, _backgroundSpeed);
     }
 }

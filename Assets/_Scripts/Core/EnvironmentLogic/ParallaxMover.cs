@@ -2,11 +2,14 @@ using UnityEngine;
 
 namespace _Scripts.Core.EnvironmentLogic
 {
+    using Zenject;
+
     public class ParallaxMover
     {
         private readonly SpriteRenderer _spriteRenderer;
         private readonly float _speed;
-
+        
+        [Inject]
         public ParallaxMover(SpriteRenderer spriteRenderer, float speed)
         {
             _spriteRenderer = spriteRenderer;

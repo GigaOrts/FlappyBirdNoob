@@ -21,7 +21,7 @@ namespace _Scripts.Core.Environment
         private void InitializeParallaxMover(ParallaxMoverPresentation presentation, float speed)  
         {  
             var spriteRenderer = presentation.GetComponent<SpriteRenderer>();  
-            var parallaxMover = new ParallaxMover(spriteRenderer, speed);  
+            //var parallaxMover = new ParallaxMover(spriteRenderer, speed);  
             // presentation.Construct(parallaxMover);  
         }  
     }
