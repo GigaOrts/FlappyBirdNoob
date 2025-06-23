@@ -13,7 +13,6 @@ public class ParallaxMoverInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<ParallaxMover>()
-            
             .AsTransient()
             .WithArguments(groundSpriteRenderer, _groundSpeed);
 
