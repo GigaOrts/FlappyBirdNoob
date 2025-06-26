@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Core.BirdLogic
 {
@@ -16,6 +17,7 @@ namespace _Scripts.Core.BirdLogic
         private float _targetAngle;
         private float _rotationSpeedFactor = 1.5f;
 
+        // [Inject]
         public BirdPhysics(Rigidbody2D rigidbody, Transform transform)
         {
             _rigidbody = rigidbody;

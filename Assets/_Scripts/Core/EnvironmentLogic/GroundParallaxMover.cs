@@ -4,13 +4,13 @@ namespace _Scripts.Core.EnvironmentLogic
 {
     using Zenject;
 
-    public class ParallaxMover
+    public class GroundParallaxMover
     {
         private readonly SpriteRenderer _spriteRenderer;
         private readonly float _speed;
         
         [Inject]
-        public ParallaxMover(SpriteRenderer spriteRenderer, float speed)
+        public GroundParallaxMover(SpriteRenderer spriteRenderer, float speed)
         {
             _spriteRenderer = spriteRenderer;
             _speed = speed;

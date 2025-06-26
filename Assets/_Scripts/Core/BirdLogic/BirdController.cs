@@ -1,3 +1,5 @@
+using Zenject;
+
 namespace _Scripts.Core.BirdLogic
 {
     public class BirdController
@@ -5,6 +7,7 @@ namespace _Scripts.Core.BirdLogic
         public BirdPhysics Physics { get; }
         public BirdAnimator Animator { get; }
 
+        // [Inject]
         public BirdController(BirdPhysics physics, BirdAnimator animator)
         {
             Physics = physics;

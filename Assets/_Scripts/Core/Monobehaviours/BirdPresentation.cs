@@ -1,6 +1,7 @@
 using System;
 using _Scripts.Core.BirdLogic;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Core.MonoBehaviours
 {
@@ -12,7 +13,8 @@ namespace _Scripts.Core.MonoBehaviours
         private BirdInput _input;
         private BirdController _controller;
 
-        public void Initialize(BirdLifecycle lifecycle, BirdInput input, BirdController controller)
+        [Inject]
+        public void Construct(BirdLifecycle lifecycle, BirdInput input, BirdController controller)
         {
             _lifecycle = lifecycle;
             _input = input;

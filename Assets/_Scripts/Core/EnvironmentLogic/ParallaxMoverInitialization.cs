@@ -2,6 +2,7 @@ using System;
 using _Scripts.Core.EnvironmentLogic;
 using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Core.Environment
 {
@@ -11,19 +12,19 @@ namespace _Scripts.Core.Environment
         [SerializeField] private float _groundSpeed = 5.1f;
         [SerializeField] private float _backgroundSpeed = 1f;
         
-        [SerializeField] private ParallaxMoverPresentation _groundParallaxMoverPresentation;
-        [SerializeField] private ParallaxMoverPresentation _backgroundParallaxMoverPresentation;
+        [FormerlySerializedAs("_groundParallaxMoverPresentation")] [SerializeField] private GroundParallaxMoverPresentation _groundGroundParallaxMoverPresentation;
+        [FormerlySerializedAs("_backgroundParallaxMoverPresentation")] [SerializeField] private GroundParallaxMoverPresentation _backgroundGroundParallaxMoverPresentation;
         
         private void Awake()  
         {  
-            InitializeParallaxMover(_groundParallaxMoverPresentation, _groundSpeed);  
-            InitializeParallaxMover(_backgroundParallaxMoverPresentation, _backgroundSpeed);  
+            InitializeParallaxMover(_groundGroundParallaxMoverPresentation, _groundSpeed);  
+            InitializeParallaxMover(_backgroundGroundParallaxMoverPresentation, _backgroundSpeed);  
         }  
         
-        private void InitializeParallaxMover(ParallaxMoverPresentation presentation, float speed)  
+        private void InitializeParallaxMover(GroundParallaxMoverPresentation presentation, float speed)  
         {  
             var spriteRenderer = presentation.GetComponent<SpriteRenderer>();  
-            var parallaxMover = new ParallaxMover(spriteRenderer, speed);  
+            var parallaxMover = new GroundParallaxMover(spriteRenderer, speed);  
             presentation.Construct(parallaxMover);  
         }  
     }

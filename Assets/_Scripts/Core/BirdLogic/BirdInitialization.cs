@@ -26,7 +26,7 @@ namespace _Scripts.Core.BirdLogic
             _lifecycle = new BirdLifecycle(_controller, _presentation.transform.position);
             _input = new BirdInput();
             
-            _presentation.Initialize(_lifecycle, _input, _controller);
+            _presentation.Construct(_lifecycle, _input, _controller);
 
             _startButton.onClick.AddListener(() =>
             {

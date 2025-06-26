@@ -1,5 +1,6 @@
 using _Scripts.Core.BirdLogic;
 using UnityEngine;
+using Zenject;
 
 public class BirdLifecycle
 {
@@ -7,6 +8,7 @@ public class BirdLifecycle
     private readonly Vector3 _startPosition;
     public bool IsReady { get; private set; }
 
+    // [Inject]
     public BirdLifecycle(BirdController controller, Vector3 startPosition)
     {
         _controller = controller;

@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 740715714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6f5588f40c4b92babf5ac9a02e2234, type: 3}
+  m_Script: {fileID: 11500000, guid: 637f439555254aee9b321bdde4138177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &761685978
@@ -1608,10 +1608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b3b07d6fd64df78d22fd040363d6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundSpeed: 5
+  _groundSpeed: 5.1
   _backgroundSpeed: 1
-  _groundParallaxMoverPresentation: {fileID: 2111772025}
-  _backgroundParallaxMoverPresentation: {fileID: 740715717}
+  _groundGroundParallaxMoverPresentation: {fileID: 0}
+  _backgroundGroundParallaxMoverPresentation: {fileID: 0}
 --- !u!114 &761685981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3585,6 +3585,7 @@ GameObject:
   - component: {fileID: 1662814907}
   - component: {fileID: 1662814906}
   - component: {fileID: 1662814908}
+  - component: {fileID: 1662814909}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -3655,6 +3656,23 @@ MonoBehaviour:
   _backgroundSpeed: 1
   groundSpriteRenderer: {fileID: 2111772023}
   backgroundSpriteRenderer: {fileID: 740715715}
+--- !u!114 &1662814909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662814905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3abdf90d7e94041aeee8d7a7c7e9294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdRigidbody: {fileID: 426007664130509378}
+  birdTransform: {fileID: 426007664130509387}
+  birdAnimatorComponent: {fileID: 426007664130509385}
+  _startButton: {fileID: 0}
+  _restartButton: {fileID: 0}
 --- !u!1 &1698782965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,6 +4762,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7363178f4cc54942970791a1838ebf0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &426007664130509385 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2023166199578777390, guid: 6b922fb108de5154b83e73b63807656e, type: 3}
+  m_PrefabInstance: {fileID: 426007664130509376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &426007664130509387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8182901114397524110, guid: 6b922fb108de5154b83e73b63807656e, type: 3}
+  m_PrefabInstance: {fileID: 426007664130509376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
