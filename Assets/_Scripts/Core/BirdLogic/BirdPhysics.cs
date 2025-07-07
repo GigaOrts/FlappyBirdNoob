@@ -17,7 +17,7 @@ namespace _Scripts.Core.BirdLogic
         private float _targetAngle;
         private float _rotationSpeedFactor = 1.5f;
 
-        // [Inject]
+        [Inject]
         public BirdPhysics(Rigidbody2D rigidbody, Transform transform)
         {
             _rigidbody = rigidbody;

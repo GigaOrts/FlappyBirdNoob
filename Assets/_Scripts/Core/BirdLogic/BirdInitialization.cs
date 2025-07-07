@@ -23,7 +23,7 @@ namespace _Scripts.Core.BirdLogic
             var birdAnimator = new BirdAnimator(animator);
 
             _controller = new BirdController(physics, birdAnimator);
-            _lifecycle = new BirdLifecycle(_controller, _presentation.transform.position);
+            _lifecycle = new BirdLifecycle(_controller);
             _input = new BirdInput();
             
             _presentation.Construct(_lifecycle, _input, _controller);

@@ -7,7 +7,7 @@ namespace _Scripts.Core.BirdLogic
         public BirdPhysics Physics { get; }
         public BirdAnimator Animator { get; }
 
-        // [Inject]
+        [Inject]
         public BirdController(BirdPhysics physics, BirdAnimator animator)
         {
             Physics = physics;

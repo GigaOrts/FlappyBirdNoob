@@ -703,7 +703,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477182144}
-  - component: {fileID: 477182143}
   - component: {fileID: 477182145}
   - component: {fileID: 477182146}
   - component: {fileID: 477182148}
@@ -714,21 +713,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &477182143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477182142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643518f93732e364fba073e71ccef6a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _presentation: {fileID: 1336139788}
-  _startButton: {fileID: 966779883}
-  _restartButton: {fileID: 911272796}
 --- !u!4 &477182144
 Transform:
   m_ObjectHideFlags: 0
@@ -3584,8 +3568,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1662814907}
   - component: {fileID: 1662814906}
-  - component: {fileID: 1662814908}
+  - component: {fileID: 1662814911}
+  - component: {fileID: 1662814910}
   - component: {fileID: 1662814909}
+  - component: {fileID: 1662814908}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -3608,6 +3594,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 1662814908}
+  - {fileID: 1662814909}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -3671,8 +3658,33 @@ MonoBehaviour:
   birdRigidbody: {fileID: 426007664130509378}
   birdTransform: {fileID: 426007664130509387}
   birdAnimatorComponent: {fileID: 426007664130509385}
-  _startButton: {fileID: 0}
-  _restartButton: {fileID: 0}
+--- !u!114 &1662814910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662814905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abad5451f9ff4bba9c85b2869c19afee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startButton: {fileID: 966779883}
+  _restartButton: {fileID: 911272796}
+--- !u!114 &1662814911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662814905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e324e0fea8491c9db175cb54217c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {fileID: 426007664130509387}
 --- !u!1 &1698782965
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,16 +5,21 @@ using Zenject;
 public class BirdLifecycle
 {
     private readonly BirdController _controller;
-    private readonly Vector3 _startPosition;
+    private Vector3 _startPosition;
     public bool IsReady { get; private set; }
 
-    // [Inject]
-    public BirdLifecycle(BirdController controller, Vector3 startPosition)
+    [Inject]
+    public BirdLifecycle(BirdController controller)
     {
         _controller = controller;
-        _startPosition = startPosition;
+        
     }
 
+    public void SetStartPosition(Vector3 position)
+    {
+        _startPosition = position;
+    }
+    
     public void StartGame()
     {
         IsReady = true;

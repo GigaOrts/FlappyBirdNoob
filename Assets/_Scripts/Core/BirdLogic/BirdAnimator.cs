@@ -9,7 +9,7 @@ namespace _Scripts.Core.BirdLogic
         private static readonly int Fly = Animator.StringToHash("Fly");
         private static readonly int FlyLoop = Animator.StringToHash("FlyLoop");
 
-        // [Inject]
+        [Inject]
         public BirdAnimator(Animator animator)
         {
             _animator = animator;
