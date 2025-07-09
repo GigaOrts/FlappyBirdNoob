@@ -1,6 +1,7 @@
 using System.Collections;
 using _Scripts.Core.Hazards;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Core.MonoBehaviours
 {
@@ -11,6 +12,13 @@ namespace _Scripts.Core.MonoBehaviours
         private float _spawnDelay;
 
         public void Initialize(PipeFactory pipeFactory)
+        {
+            _pipeFactory = pipeFactory;
+            _spawnDelay = _pipeFactory.SpawnDelay;
+        }
+        
+        [Inject]
+        public void Construct(PipeFactory pipeFactory)
         {
             _pipeFactory = pipeFactory;
             _spawnDelay = _pipeFactory.SpawnDelay;

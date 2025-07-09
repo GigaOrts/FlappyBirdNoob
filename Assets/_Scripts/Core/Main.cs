@@ -8,7 +8,6 @@ namespace _Scripts.Core
 
     public class Main : MonoBehaviour
     {
-        [SerializeField] private PipeFactoryPresentation _pipeFactoryPresentation;
         [SerializeField] private BirdPresentation _birdPresentation;
 
         [SerializeField] private GameObject _gameOverMenu;

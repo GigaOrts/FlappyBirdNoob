@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Core.Hazards
 {
@@ -17,6 +18,7 @@ namespace _Scripts.Core.Hazards
 
         public float SpawnDelay { get; }
 
+		[Inject]
         public PipeFactory(PipePresentation prefab, Vector2 spawnPosition, Transform parent)
         {
             _prefab = prefab;
