@@ -3680,9 +3680,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d08e62dfe6494fb430d58fa20d2073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipePrefab: {fileID: 6163249029560017347, guid: 7e4ecaa90a2211146b5d6d87ec9466c9, type: 3}
-  spawnPoint: {fileID: 381662023}
-  pipeContainer: {fileID: 1400252522}
+  _pipePrefab: {fileID: 6163249029560017347, guid: 7e4ecaa90a2211146b5d6d87ec9466c9, type: 3}
+  _spawnPoint: {fileID: 381662023}
+  _pipeContainer: {fileID: 1400252522}
+  _restartButton: {fileID: 911272796}
+  _startButton: {fileID: 966779883}
 --- !u!1 &1698782965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,7 +4426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b8a416a17f1e04c9a3b7badd706d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pipeFactoryPresentation: {fileID: 1400252521}
   _birdPresentation: {fileID: 1336139788}
   _gameOverMenu: {fileID: 1698782965}
   _getReadyMenu: {fileID: 1708686824}

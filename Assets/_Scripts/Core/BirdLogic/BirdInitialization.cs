@@ -1,9 +1,11 @@
+using System;
 using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Core.BirdLogic
 {
+    [Obsolete]
     public class BirdInitialization : MonoBehaviour
     {
         [SerializeField] private BirdPresentation _presentation;

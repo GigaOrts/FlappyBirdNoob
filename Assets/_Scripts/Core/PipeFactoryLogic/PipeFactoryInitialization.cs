@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 
 namespace _Scripts.Core.Hazards
 {
+    [Obsolete]
     public class PipeFactoryInitialization : MonoBehaviour
     {
         [SerializeField] private PipeFactoryPresentation  _pipeFactoryPresentation;

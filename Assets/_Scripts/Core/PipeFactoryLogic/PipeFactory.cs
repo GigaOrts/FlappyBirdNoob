@@ -18,7 +18,7 @@ namespace _Scripts.Core.Hazards
 
         public float SpawnDelay { get; }
 
-		[Inject]
+		// [Inject]
         public PipeFactory(PipePresentation prefab, Vector2 spawnPosition, Transform parent)
         {
             _prefab = prefab;
