@@ -3551,9 +3551,9 @@ GameObject:
   - component: {fileID: 1662814906}
   - component: {fileID: 1662814912}
   - component: {fileID: 1662814911}
-  - component: {fileID: 1662814910}
   - component: {fileID: 1662814909}
   - component: {fileID: 1662814908}
+  - component: {fileID: 1662814913}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -3641,20 +3641,6 @@ MonoBehaviour:
   birdRigidbody: {fileID: 426007664130509378}
   birdTransform: {fileID: 426007664130509387}
   birdAnimatorComponent: {fileID: 426007664130509385}
---- !u!114 &1662814910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662814905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abad5451f9ff4bba9c85b2869c19afee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startButton: {fileID: 966779883}
-  _restartButton: {fileID: 911272796}
 --- !u!114 &1662814911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3680,9 +3666,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d08e62dfe6494fb430d58fa20d2073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pipeFactoryPresentation: {fileID: 1400252521}
   _pipePrefab: {fileID: 6163249029560017347, guid: 7e4ecaa90a2211146b5d6d87ec9466c9, type: 3}
   _spawnPoint: {fileID: 381662023}
   _pipeContainer: {fileID: 1400252522}
+--- !u!114 &1662814913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662814905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df78d1b68a9b49a88337d04421daa327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _restartButton: {fileID: 911272796}
   _startButton: {fileID: 966779883}
 --- !u!1 &1698782965

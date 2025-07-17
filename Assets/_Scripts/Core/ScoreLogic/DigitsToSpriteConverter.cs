@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _Scripts.Core.ScoreLogic
 {
@@ -12,6 +13,7 @@ namespace _Scripts.Core.ScoreLogic
         private readonly Score _score; 
         private readonly HighScore _highScore;
         
+        [Inject]
         public DigitsToSpriteConverter(Score score, HighScore highScore, Sprite[] digitSprites, Image[] scoreDigitObjects, Image[] highScoreDigitObjects)
         {
             _score = score;

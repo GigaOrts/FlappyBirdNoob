@@ -1,9 +1,11 @@
+using System;
 using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Core.ScoreLogic
 {
+    [Obsolete]
     public class ScoreInitialization : MonoBehaviour
     {
         [SerializeField] private ScorePresentation _scorePresentation;
@@ -28,7 +30,7 @@ namespace _Scripts.Core.ScoreLogic
             _startButton.onClick.AddListener(score.Reset);
             _restartButton.onClick.AddListener(score.Reset);
 
-            _scorePresentation.Initialize(score);
+            _scorePresentation.Construct(score);
             
             _digitsToSpriteConverter = new DigitsToSpriteConverter(score, highScore, _digitSprites, 
                 _scoreDigitObjects, _highScoreDigitObjects);

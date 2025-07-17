@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Core.ScoreLogic
 {
@@ -8,6 +9,7 @@ namespace _Scripts.Core.ScoreLogic
         
         private Score _score;
 
+        [Inject]
         public HighScore(Score score)
         {
             _score = score;

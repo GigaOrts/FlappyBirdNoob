@@ -1,5 +1,6 @@
 using _Scripts.Core.ScoreLogic;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Core.MonoBehaviours
 {
@@ -7,7 +8,8 @@ namespace _Scripts.Core.MonoBehaviours
     {
         private Score _score;
 
-        public void Initialize(Score score)
+        [Inject]
+        public void Construct(Score score)
         {
             _score = score;
         }

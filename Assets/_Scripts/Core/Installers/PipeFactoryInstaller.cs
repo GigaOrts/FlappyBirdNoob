@@ -14,10 +14,8 @@ namespace _Scripts.Core
         
         public override void InstallBindings()
         {
-            print("installing PipeFactory");
             PipeFactory pipeFactory = new PipeFactory(_pipePrefab, _spawnPoint.position, _pipeContainer);
             Container.Bind<PipeFactory>().FromInstance(pipeFactory).AsSingle();
-            
             Container.Bind<PipeFactoryPresentation>().FromInstance(_pipeFactoryPresentation).AsSingle();
         }
     }
