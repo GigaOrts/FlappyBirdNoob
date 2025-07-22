@@ -8,7 +8,6 @@ namespace _Scripts.Core.MonoBehaviours
     {
         private Score _score;
 
-        [Inject]
         public void Construct(Score score)
         {
             _score = score;

@@ -17,7 +17,7 @@ namespace _Scripts.Core.MonoBehaviours
             _spawnDelay = _pipeFactory.SpawnDelay;
         }
         
-        [Inject]
+        
         public void Construct(PipeFactory pipeFactory)
         {
             _pipeFactory = pipeFactory;

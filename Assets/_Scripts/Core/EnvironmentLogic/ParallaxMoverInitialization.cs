@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 
 namespace _Scripts.Core.Environment
 {
-    [Obsolete]
     public class ParallaxMoverInitialization : MonoBehaviour
     {
         [SerializeField] private float _groundSpeed = 5.1f;

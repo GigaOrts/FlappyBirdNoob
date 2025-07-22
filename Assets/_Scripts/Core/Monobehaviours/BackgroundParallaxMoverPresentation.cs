@@ -8,7 +8,7 @@ namespace _Scripts.Core.MonoBehaviours
     {
         private BackgroundParallaxMover _backgroundParallaxMover;
         
-        [Inject] 
+         
         public void Construct(BackgroundParallaxMover backgroundParallaxMover)
         {
             _backgroundParallaxMover = backgroundParallaxMover;

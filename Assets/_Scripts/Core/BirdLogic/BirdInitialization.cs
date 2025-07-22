@@ -2,41 +2,41 @@ using System;
 using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _Scripts.Core.BirdLogic
 {
-    [Obsolete]
-    public class BirdInitialization : MonoBehaviour
+    public class BirdInitialization : MonoBehaviour, IInitializable, IDisposable
     {
-        [SerializeField] private BirdPresentation _presentation;
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _restartButton;
 
         private BirdController _controller;
-        private BirdInput _input;
         private BirdLifecycle _lifecycle;
-
-        private void Awake()
+        
+        [Inject]
+        public void Construct(BirdController controller, BirdLifecycle lifecycle)
         {
-            var body = _presentation.GetComponent<Rigidbody2D>();
-            var animator = _presentation.GetComponent<Animator>();
+            _controller =controller;
+            _lifecycle = lifecycle;
+        }
 
-            var physics = new BirdPhysics(body, _presentation.transform);
-            var birdAnimator = new BirdAnimator(animator);
-
-            _controller = new BirdController(physics, birdAnimator);
-            _lifecycle = new BirdLifecycle(_controller);
-            _input = new BirdInput();
-            
-            _presentation.Construct(_lifecycle, _input, _controller);
-
-            _startButton.onClick.AddListener(() =>
-            {
-                _lifecycle.StartGame();
-                _controller.Jump();
-            });
-
+        public void Initialize()
+        {
+            _startButton.onClick.AddListener(BirdStart);
             _restartButton.onClick.AddListener(_lifecycle.Restart);
+        }
+
+        private void BirdStart()
+        {
+            _lifecycle.StartGame();
+            _controller.Jump();
+        }
+
+        public void Dispose()
+        {
+            _startButton.onClick.RemoveListener(BirdStart);
+            _restartButton.onClick.RemoveListener(_lifecycle.Restart);
         }
     }
 }

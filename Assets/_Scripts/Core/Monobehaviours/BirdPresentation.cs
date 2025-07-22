@@ -14,16 +14,23 @@ namespace _Scripts.Core.MonoBehaviours
         private BirdController _controller;
 
         [Inject]
-        public void Construct(BirdLifecycle lifecycle, BirdInput input, BirdController controller)
+        public void Construct(BirdInput input, BirdController controller, BirdLifecycle lifecycle)
         {
-            _lifecycle = lifecycle;
             _input = input;
             _controller = controller;
+            _lifecycle = lifecycle;
         }
-
+        
         public void Die()
         {
             Died?.Invoke();
+        }
+        
+        private void Awake()
+        {
+            var rigidbody = GetComponent<Rigidbody2D>();
+            var animator = GetComponent<Animator>();
+            _controller.Init(rigidbody, animator);
         }
 
         private void Start()

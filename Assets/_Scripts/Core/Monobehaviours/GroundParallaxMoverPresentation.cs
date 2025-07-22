@@ -8,7 +8,6 @@ namespace _Scripts.Core.MonoBehaviours
     {
         private GroundParallaxMover _groundParallaxMover;
         
-        [Inject] 
         public void Construct(GroundParallaxMover groundParallaxMover)
         {
             _groundParallaxMover = groundParallaxMover;

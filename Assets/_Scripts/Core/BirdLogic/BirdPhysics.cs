@@ -1,3 +1,4 @@
+using _Scripts.Core.MonoBehaviours;
 using UnityEngine;
 using Zenject;
 
@@ -5,9 +6,6 @@ namespace _Scripts.Core.BirdLogic
 {
     public class BirdPhysics
     {
-        private readonly Rigidbody2D _rigidbody;
-        private readonly Transform _transform;
-
         private const float JumpForce = 12f;
         private const float MaxUpAngle = 30f;
         private const float MaxDownAngle = -60f;
@@ -17,14 +15,14 @@ namespace _Scripts.Core.BirdLogic
         private float _targetAngle;
         private float _rotationSpeedFactor = 1.5f;
 
-        [Inject]
-        public BirdPhysics(Rigidbody2D rigidbody, Transform transform)
+        private Rigidbody2D _rigidbody;
+        
+        public void Init(Rigidbody2D rigidbody)
         {
             _rigidbody = rigidbody;
-            _transform = transform;
         }
-
-        public void Jump()
+        
+        public void Jump() 
         {
             _rigidbody.velocity = Vector2.zero;
             _rigidbody.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
@@ -43,9 +41,9 @@ namespace _Scripts.Core.BirdLogic
                 _targetAngle = MaxDownAngle;
             }
 
-            var currentZ = _transform.eulerAngles.z;
+            var currentZ = _rigidbody.transform.eulerAngles.z;
             var angle = Mathf.LerpAngle(currentZ, _targetAngle, Mathf.Abs(_rigidbody.velocity.y) * Time.deltaTime * _rotationSpeedFactor);
-            _transform.rotation = Quaternion.Euler(0, 0, angle);
+            _rigidbody.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
         public void Reset(Vector3 startPosition)
@@ -53,8 +51,8 @@ namespace _Scripts.Core.BirdLogic
             _rigidbody.isKinematic = true;
             _rigidbody.velocity = Vector2.zero;
             _rigidbody.angularVelocity = 0;
-            _transform.position = startPosition;
-            _transform.rotation = Quaternion.identity;
+            _rigidbody.position = startPosition;
+            _rigidbody.transform.rotation = Quaternion.identity;
         }
 
         public void EnablePhysics() => _rigidbody.isKinematic = false;

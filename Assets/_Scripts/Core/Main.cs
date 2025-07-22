@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 namespace _Scripts.Core
 {
-
     public class Main : MonoBehaviour
     {
         [SerializeField] private BirdPresentation _birdPresentation;

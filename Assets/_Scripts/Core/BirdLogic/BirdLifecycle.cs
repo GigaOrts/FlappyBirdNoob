@@ -12,7 +12,6 @@ public class BirdLifecycle
     public BirdLifecycle(BirdController controller)
     {
         _controller = controller;
-        
     }
 
     public void SetStartPosition(Vector3 position)

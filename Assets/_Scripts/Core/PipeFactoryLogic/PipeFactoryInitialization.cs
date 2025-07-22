@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 namespace _Scripts.Core.Hazards
 {
-    [Obsolete]
     public class PipeFactoryInitialization : MonoBehaviour
     {
         [SerializeField] private PipeFactoryPresentation  _pipeFactoryPresentation;

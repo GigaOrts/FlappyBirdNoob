@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 namespace _Scripts.Core.ScoreLogic
 {
-    [Obsolete]
     public class ScoreInitialization : MonoBehaviour
     {
         [SerializeField] private ScorePresentation _scorePresentation;
